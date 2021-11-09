@@ -1,4 +1,5 @@
 
+
 //음양더하기
 /*
 class Solution {
@@ -55,3 +56,42 @@ public class Main {
         System.out.println(solution.solution(x));
     }
 }*/
+//2016년 요일
+
+class Solution {
+    public String solution(int a, int b) {
+        String answer = "";
+        int sumdays=0;
+        int check=0;
+        int []month = {31,29,31,30,31,30,31,31,30,31,30,31};
+        String[] day = {"SUN","MON","TUE","WED","THU","FRI","SAT"};
+        for(int i =0;i<a-1;i++){
+            if((i)==2){
+                sumdays += month[i];
+            }
+            else if((i)%2==0){              //짝수달
+                sumdays += month[i];
+
+            }else if((i)==7){
+                sumdays+=month[i];
+            }else {
+                sumdays+=month[i];
+            }
+        }
+        check= sumdays;
+        answer= day[(sumdays+b+4)%7];
+
+        return check+answer;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution(1, 1));
+    }
+}
+
+
+

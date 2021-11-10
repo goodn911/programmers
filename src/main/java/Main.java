@@ -57,7 +57,7 @@ public class Main {
     }
 }*/
 //2016년 요일
-
+/*
 class Solution {
     public String solution(int a, int b) {
         String answer = "";
@@ -92,6 +92,103 @@ public class Main {
         System.out.println(solution.solution(1, 1));
     }
 }
+ */
+/*
+//문자열다루기 기본
+class Solution {
+    public boolean solution(String s) {
+        if (s.length() == 4 || s.length() == 6) {
 
+
+            char[] arr = s.toCharArray();
+            int count = 0;
+            char[] num = {'0', '1', '2','3','4', '5','6','7','8','9'};
+            for (int i = 0; i < s.length(); i++) {
+                for (int j = 0; j < 10; j++) {
+                    if (arr[i] == num[j]) {
+                        count +=1;
+
+                    }
+                }
+            }
+            if(count == s.length()){
+                return true;
+            }else{
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution("a231"));
+    }
+}
+
+ */
+//이상한 문자만들기
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/*
+class Solution {
+    public String solution(String s) {
+        String[] str = s.split("");
+        String answer = "";
+        int count = 0;
+        for(int i=0; i<str.length; i++){
+            count= str[i].equals(" ") ? 0 : count+1 ;
+            answer+= count % 2==0 ? str[i].toLowerCase(): str[i].toUpperCase();
+        }
+
+        return answer;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution("tryh ello world"));
+    }
+}
+
+ */
+
+/*
+//정수제곱근 판별
+class Solution {
+    public long solution(long n) {
+        long answer = 0;
+
+        if(Math.sqrt(n)%1==0){
+            answer = (long) Math.pow(Math.sqrt(n)+1,2);
+        }else{
+            answer = -1;
+        }
+        return answer;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution(121));
+    }
+}
+
+ */
 
 

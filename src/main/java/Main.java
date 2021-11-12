@@ -222,6 +222,7 @@ public class Main {
 }*/
 
 //x만큼 간격이 있는 n개의 숫자
+/*
 class Solution {
     public long[] solution(int x, int n) {
         long[] answer = new long[n];
@@ -243,5 +244,32 @@ public class Main {
 
         Solution solution = new Solution();
         System.out.println(solution.solution(2, 5));
+    }
+}*/
+
+
+class Solution {
+    public long solution(int price, int money, int count) {
+        long answer = -1;
+        long sum =0;
+        long result = 0;
+        for(int i =0; i<count;i++){
+            sum+= price*(i+1);
+
+        }
+        System.out.println(sum);
+
+        if(sum<money){
+            return 0;
+        }
+        return result;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution(2500, 40,2500));
     }
 }

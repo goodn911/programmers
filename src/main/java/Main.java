@@ -190,7 +190,7 @@ public class Main {
 }
 
  */
-
+/*
 //행렬의 덧셈
 class Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
@@ -198,6 +198,7 @@ class Solution {
         for(int i =0;i<arr1.length;i++){
             for(int j = 0;j<arr2[i].length;j++){
                 answer[i][j] = arr1[i][j] + arr2[i][j];
+                System.out.println(answer[i][j]);
 
             }
         }
@@ -217,5 +218,30 @@ public class Main {
         };
         Solution solution = new Solution();
         System.out.println(solution.solution(aa,bb));
+    }
+}*/
+
+//x만큼 간격이 있는 n개의 숫자
+class Solution {
+    public long[] solution(int x, int n) {
+        long[] answer = new long[n];
+
+        for(int i =0;i<answer.length;i++){
+            answer[i] = x * (i+1);
+
+            System.out.println(answer[i]);
+        }
+
+
+
+        return answer;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+
+        Solution solution = new Solution();
+        System.out.println(solution.solution(2, 5));
     }
 }

@@ -136,9 +136,6 @@ public class Main {
 
  */
 //이상한 문자만들기
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /*
 class Solution {
@@ -247,7 +244,7 @@ public class Main {
     }
 }*/
 
-
+/*
 class Solution {
     public long solution(int price, int money, int count) {
         long answer = -1;
@@ -255,14 +252,14 @@ class Solution {
         long result = 0;
         for(int i =0; i<count;i++){
             sum+= price*(i+1);
-
         }
-        System.out.println(sum);
-
-        if(sum<money){
+        if(sum>money){
+            answer = sum-money;
+        }else{
             return 0;
+
         }
-        return result;
+        return answer;
     }
 }
 public class Main {
@@ -270,6 +267,44 @@ public class Main {
         // write your code here
 
         Solution solution = new Solution();
-        System.out.println(solution.solution(2500, 40,2500));
+        System.out.println(solution.solution(3, 20,4));
+    }
+}
+
+ */
+
+class Solution {
+    public int[] solution(int[] arr, int divisor) {
+
+        int cnt = 0;
+        for(int i =0; i<arr.length;i++){
+            if(arr[i]%divisor == 0){
+                cnt++;
+
+            }
+        }
+        int[] answer = new int[cnt];
+        if(cnt ==0 ){
+            answer[0] =-1;
+            return answer;
+        }else {
+            for(int i =0;i< arr.length;i++){
+                if(arr[i]%divisor ==0){
+                    answer[i] =arr[i];
+                }
+
+            }
+        }
+
+        return answer;
+
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // write your code here
+        int[] a = {5,9,6,10};
+        Solution solution = new Solution();
+        System.out.println(solution.solution(a,5));
     }
 }
